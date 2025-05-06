@@ -1,15 +1,19 @@
 body {
-  background-color: blue;
+  background-color: #000;
 }
 
 .text-mask {
-  background: linear-gradient(to right, white 50%, black 50%);
+  background: linear-gradient(to right, #fff 50%, #f00 50%);
   background-size: 200% 100%;
   background-position: right;
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   transition: background-position 0.5s ease;
+
+  font-size: 100px;
+  font-weight: bold;
+  font-family: sans-serif;
 }
 
 .text-mask:hover {

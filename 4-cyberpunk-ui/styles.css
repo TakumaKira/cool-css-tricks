@@ -1,5 +1,22 @@
+body {
+  background-color: #000;
+}
+
+.container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
 /*text glow effect*/
 .glow {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: sans-serif;
+
+  color: #fff;
   text-shadow: 
     0 0 4px #0ff,   /* Light glow */
     0 0 8px #0ff,   /* Medium glow */
@@ -9,11 +26,24 @@
 
 /*button glow effect*/
 .glow-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+
+  background: none;
+  color: #ff00ff;
+  text-shadow: 
+    0 0 4px #ff00ff,   /* Light glow */
+    0 0 8px #ff00ff,   /* Medium glow */
+    0 0 12px #ff00ff,  /* Stronger glow */
+    0 0 16px #ff00ff;  /* Very strong glow */
+  border: solid 1px #ff00ff;
+
   box-shadow: 
-    0 0 8px #ff00ff,    /* Light inner glow */
+    inset 0 0 8px #ff00ff,    /* Light inner glow */
     0 0 15px #ff00ff,   /* Medium outer glow */
     0 0 20px #ff00ff,   /* Stronger outer glow */
-    0 0 30px #ff00ff;   /* Very strong outer glow */
+    inset 0 0 30px #ff00ff;   /* Very strong outer glow */
 }
 
 /*flicker animation*/
