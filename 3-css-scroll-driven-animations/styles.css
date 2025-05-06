@@ -1,4 +1,40 @@
+body {
+  background-color: #000;
+}
+
+section {
+  height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.top-spacer {
+  height: 500px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 48px;
+  text-transform: uppercase;
+  opacity: 0.3;
+}
+.bottom-spacer {
+  margin-bottom: 10px;
+}
+
 .card {
+  width: 500px;
+  padding: 24px;
+  background-color: #222;
+  border-radius: 12px;
+  color: #fff;
+  font-family: sans-serif;
+
   opacity: 0;
   transform: translateY(60px) scale(0.95);
   animation: reveal ease-out forwards;
@@ -11,8 +47,8 @@
 .card:nth-child(4) { animation-delay: 0.6s; }
 
 @keyframes reveal {
-to {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
