@@ -1,0 +1,18 @@
+.card {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  animation: reveal ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
+}
+
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+.card:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes reveal {
+to {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+}
