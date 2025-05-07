@@ -1,5 +1,9 @@
 body {
   background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .container {
@@ -29,6 +33,7 @@ body {
   padding: 12px 24px;
   font-size: 18px;
   border-radius: 8px;
+  cursor: pointer;
 
   background: none;
   color: #ff00ff;
