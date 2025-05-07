@@ -1,21 +1,59 @@
 body {
   height: 100vh;
   width: 100vw;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
   cursor: none; /* hide the OS default */
+  position: relative;
+  padding: 36px;
 }
 
 .custom-cursor {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: black;
+  background-color: #888;
   border-radius: 50%;
   pointer-events: none; /* don’t block clicks */
   transform: translate(-50%, -50%);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.1s ease, top 0ms ease, left 0ms ease;
   z-index: 9999;
+}
+
+.hover-target {
+  cursor: none; /* hide the OS default */
+  border: none;
+  background-color: #000;
+  color: #ffaaff;
+  border-radius: 12px;
+  box-shadow: 
+    0 0 8px #ff00ff,    /* Light inner glow */
+    0 0 15px #ff00ff,   /* Medium outer glow */
+    0 0 20px #ff00ff,   /* Stronger outer glow */
+    0 0 30px #ff00ff;   /* Very strong outer glow */
+  padding: 18px 24px;
+  font-size: 24px;
+}
+
+.container:hover > .custom-cursor {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.hover-target:hover ~ .custom-cursor {
+  transform: translate(-50%, -50%) scale(2);
+  background-color: red;
+}
+
+.hover-target:active {
+  transform: scale(0.96);
+  transition: transform 0.1s ease;
 }
 
 .custom-cursor.click {
@@ -23,7 +61,7 @@ body {
 }
 
 @keyframes clickPulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.5); opacity: 0.5; }
-  100% { transform: scale(1); opacity: 1; }
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
 }

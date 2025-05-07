@@ -1,16 +1,19 @@
+const container = document.querySelector('.container');
 const cursor = document.querySelector('.custom-cursor');
 const targets = document.querySelectorAll('.hover-target');
 
 targets.forEach(target => {
-  target.addEventListener('mousemove', (e) => {
-    const rect = target.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    cursor.style.transform = `translate(-50%, -50%) translate(${e.clientX}px, ${e.clientY}px) scale(1.5)`;
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    cursor.style.left = `${x}px`;
+    cursor.style.top = `${y}px`;
   });
 
-  target.addEventListener('mouseleave', () => {
-    cursor.style.transform = `translate(-50%, -50%) scale(1)`;
+  container.addEventListener('mouseleave', () => {
+    cursor.style.top = `0px`;
+    cursor.style.left = `0px`;
   });
 });
 
